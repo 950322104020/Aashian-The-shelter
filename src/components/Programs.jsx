@@ -57,6 +57,11 @@ export default function OurPrograms() {
         "Provide school stationery (notebooks, registers, pencils, pens, colours, erasers) to 150 children",
         "Fund school uniforms for children facing the greatest financial hardship"
       ],
+      highlights: [
+        "Monthly tuition funding for 54 children",
+        "Stationery kits distributed to 150 children",
+        "School uniforms provided to families in hardship"
+      ],
       ctaText: "Support a Child's Education",
       ctaLink: "#donate"
     },
@@ -72,7 +77,9 @@ export default function OurPrograms() {
         "Covered mouth, breast, and uterine cancer screening",
         "Encouraged sanitary hygiene awareness",
         "16 women attended the workshop"
-      ]
+      ],
+      ctaText: "Support Health Workshops",
+      ctaLink: "#donate"
     },
     {
       id: "women-empowerment",
@@ -92,7 +99,15 @@ export default function OurPrograms() {
         "Banking Independence — assistance opening and managing individual bank accounts",
         "Counselling & Family Support — emotional support through personal hardships",
         "Community Meals — shared daily meals at Aashiana building unity and reducing discrimination"
-      ]
+      ],
+      highlights: [
+        "Skill training in jewellery-making & tailoring",
+        "16 women earning a stable income",
+        "Self-help savings group for emergency microloans",
+        "Literacy, banking & leadership support"
+      ],
+      ctaText: "Empower a Woman",
+      ctaLink: "#donate"
     },
     {
       id: "outreach",
@@ -105,7 +120,9 @@ export default function OurPrograms() {
         "Quarterly distribution of food, clothing, and blankets",
         "Winter relief drives for children & families",
         "600+ individuals benefited this year"
-      ]
+      ],
+      ctaText: "Support Community Drives",
+      ctaLink: "#donate"
     },
     {
       id: "hospital-visits",
@@ -118,7 +135,9 @@ export default function OurPrograms() {
         "Quarterly visits to patients with Thalassemia & HIV",
         "Fresh fruit distribution & emotional companionship",
         "Creating a sense of belonging for isolated individuals"
-      ]
+      ],
+      ctaText: "Sponsor Patient Meals",
+      ctaLink: "#donate"
     },
     {
       id: "home-visits",
@@ -131,12 +150,14 @@ export default function OurPrograms() {
         "Direct field visits to understand unique family challenges",
         "Financial assistance & tailored guidance",
         "Health & hygiene education"
-      ]
+      ],
+      ctaText: "Support Home Visits",
+      ctaLink: "#donate"
     }
   ];
 
   return (
-    <section id="programs" className="py-20 bg-offWhite text-slateDark font-body">
+    <section id="programs" className="py-20 bg-slate-100 text-slate-800 font-body">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Section Header */}
@@ -148,7 +169,7 @@ export default function OurPrograms() {
             Comprehensive Programs Restoring Dignity & Hope
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3">
-            Holistic support spanning nutrition, medical reimbursement, child education, livelihood training, and community outreach[cite: 1].
+            Holistic support spanning nutrition, medical reimbursement, child education, livelihood training, and community outreach.
           </p>
         </div>
 
@@ -160,74 +181,78 @@ export default function OurPrograms() {
               <div
                 key={prog.id}
                 id={prog.id}
-                className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200 shadow-sm hover:shadow-md transition-all relative overflow-hidden"
+                className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
               >
                 {/* SEO Label Badge */}
                 <div className="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
-                  {prog.keywords}[cite: 1]
+                  {prog.keywords}
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                   
                   {/* Left Column: Icon & Overview */}
-                  <div className="lg:col-span-7 space-y-4">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-red-50 text-brandRed rounded-2xl shrink-0">
-                        <IconComponent className="w-7 h-7" />
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-brandNavy">
-                        {prog.title}[cite: 1]
-                      </h3>
-                    </div>
-
-                    <p className="text-base font-semibold text-slate-800 leading-relaxed">
-                      {prog.summary}[cite: 1]
-                    </p>
-
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      {prog.desc}[cite: 1]
-                    </p>
-
-                    {/* Bullet Points if available */}
-                    {prog.bullets && (
-                      <div className="pt-2">
-                        <h4 className="text-xs font-bold uppercase tracking-wider text-brandNavy mb-3">Key Focus Pillars:</h4>
-                        <ul className="space-y-2 text-sm text-slate-700">
-                          {prog.bullets.map((bullet, idx) => (
-                            <li key={idx} className="flex items-start gap-2.5">
-                              <CheckCircle2 className="w-4 h-4 text-brandRed shrink-0 mt-0.5" />
-                              <span>{bullet}[cite: 1]</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Artisan Quote if available */}
-                    {prog.quote && (
-                      <div className="mt-4 bg-amber-50/60 border-l-4 border-brandGold p-4 rounded-r-2xl">
-                        <blockquote className="text-xs sm:text-sm italic text-slate-800 mb-2">
-                          “{prog.quote.text}”[cite: 1]
-                        </blockquote>
-                        <div className="text-xs font-bold text-brandNavy">
-                          — {prog.quote.author}[cite: 1]
+                  <div className="lg:col-span-7 space-y-4 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className="p-3.5 bg-red-50 text-brandRed rounded-2xl shrink-0 group-hover:scale-105 transition-transform duration-300">
+                          <IconComponent className="w-7 h-7" />
                         </div>
+                        <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-brandNavy">
+                          {prog.title}
+                        </h3>
                       </div>
-                    )}
+
+                      <p className="text-base font-bold text-slate-800 leading-relaxed mb-3">
+                        {prog.summary}
+                      </p>
+
+                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                        {prog.desc}
+                      </p>
+
+                      {/* Bullet Points */}
+                      {prog.bullets && (
+                        <div className="pt-2">
+                          <h4 className="text-xs font-bold uppercase tracking-wider text-brandNavy mb-3">
+                            Key Focus Pillars:
+                          </h4>
+                          <ul className="space-y-2.5 text-sm text-slate-700">
+                            {prog.bullets.map((bullet, idx) => (
+                              <li key={idx} className="flex items-start gap-2.5">
+                                <CheckCircle2 className="w-4 h-4 text-brandRed shrink-0 mt-0.5" />
+                                <span className="font-medium text-slate-700">{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Artisan Quote */}
+                      {prog.quote && (
+                        <div className="mt-5 bg-amber-50/80 border-l-4 border-amber-500 p-4 rounded-r-2xl">
+                          <blockquote className="text-xs sm:text-sm italic text-slate-800 mb-2 font-medium">
+                            “{prog.quote.text}”
+                          </blockquote>
+                          <div className="text-xs font-bold text-brandNavy">
+                            — {prog.quote.author}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* Right Column: Highlights & CTA */}
-                  <div className="lg:col-span-5 bg-slate-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between h-full">
+                  <div className="lg:col-span-5 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 flex flex-col justify-between h-full">
                     {prog.highlights && (
                       <div>
-                        <h4 className="text-xs font-bold uppercase tracking-wider text-brandNavy mb-3">
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-brandNavy mb-4">
                           Program Highlights
                         </h4>
-                        <ul className="space-y-2 text-xs sm:text-sm text-slate-700 mb-6">
+                        <ul className="space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
                           {prog.highlights.map((item, idx) => (
-                            <li key={idx} className="flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 bg-brandRed rounded-full shrink-0" />
-                              <span>{item}[cite: 1]</span>
+                            <li key={idx} className="flex items-start gap-2.5">
+                              <span className="w-2 h-2 bg-brandRed rounded-full shrink-0 mt-1.5" />
+                              <span className="font-medium text-slate-700">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -235,13 +260,13 @@ export default function OurPrograms() {
                     )}
 
                     {prog.ctaText && (
-                      <div className="pt-4 border-t border-gray-200 mt-auto">
+                      <div className="pt-4 border-t border-slate-200 mt-auto">
                         <a
                           href={prog.ctaLink}
-                          className="w-full bg-brandRed hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl text-xs sm:text-sm transition-all shadow-sm flex items-center justify-center gap-2"
+                          className="group/btn w-full bg-white hover:bg-brandRed text-brandNavy hover:text-white font-bold py-3.5 px-6 rounded-xl text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-slate-200 hover:border-brandRed"
                         >
-                          <Heart className="w-4 h-4 fill-current" />
-                          <span>{prog.ctaText}</span>[cite: 1]
+                          <Heart className="w-4 h-4 fill-current text-brandNavy group-hover/btn:text-white shrink-0 transition-colors" />
+                          <span className="text-brandNavy group-hover/btn:text-white font-bold transition-colors">{prog.ctaText}</span>
                         </a>
                       </div>
                     )}

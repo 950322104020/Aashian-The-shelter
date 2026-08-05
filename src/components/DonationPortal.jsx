@@ -37,17 +37,17 @@ export default function DonationPortal() {
         {/* Left Side */}
         <div className="md:col-span-2 bg-brandNavy text-white p-8 flex flex-col justify-between">
           <div>
-            <span className="bg-brandRed/20 text-brandGold border border-brandGold/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="bg-brandRed/30 text-black border border-white/20 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
               Tax Exempt (80G)
             </span>
-            <h2 className="font-heading font-extrabold text-2xl lg:text-3xl mt-4 mb-4 leading-tight">
+            <h2 className="font-heading font-extrabold text-black lg:text-3xl mt-4 mb-4 leading-tight text-black">
               Every Contribution Saves Lives
             </h2>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+            <p className="text-black text-sm leading-relaxed mb-6">
               Your donations directly fund confidential testing kits, ART medical support, and community education.
             </p>
           </div>
-          <div className="space-y-3 text-xs text-gray-300 border-t border-white/10 pt-4">
+          <div className="space-y-3 text-xs text-black border-t border-white/10 pt-4">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-brandGold" /> 256-Bit SSL Encrypted
             </div>
@@ -60,14 +60,14 @@ export default function DonationPortal() {
             <button
               type="button"
               onClick={() => setType('one-time')}
-              className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${type === 'one-time' ? 'bg-brandRed text-white shadow' : 'text-gray-600'}`}
+              className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${type === 'one-time' ? 'bg-brandRed text-slate shadow' : 'text-gray-600'}`}
             >
               One-Time
             </button>
             <button
               type="button"
               onClick={() => setType('monthly')}
-              className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${type === 'monthly' ? 'bg-brandRed text-white shadow' : 'text-gray-600'}`}
+              className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${type === 'monthly' ? 'bg-brandRed text-slate shadow' : 'text-gray-600'}`}
             >
               Monthly Supporter
             </button>
@@ -114,7 +114,7 @@ export default function DonationPortal() {
             />
           </div>
 
-          <button type="submit" className="w-full bg-brandRed hover:bg-red-800 text-white font-bold py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all">
+          <button type="submit" className="w-full bg-brandRed hover:bg-red-800 text-slate font-bold py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all">
             <Heart className="w-5 h-5 fill-current" />
             <span>Proceed to Donate ₹{customAmount || amount || 0}</span>
           </button>

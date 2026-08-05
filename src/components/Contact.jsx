@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           <div>
-            <span className="text-brandRed font-bold text-xs uppercase tracking-widest">Get In Touch</span>
+            <span className="text-white font-bold text-xs uppercase tracking-widest">Get In Touch</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white mt-2 mb-6">
               We Are Here To Listen & Help
             </h2>
@@ -59,11 +59,15 @@ export default function Contact() {
               <label className="block text-xs font-bold uppercase text-white-500 mb-1">Email Address</label>
               <input type="email" placeholder="john@example.com" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brandNavy text-sm" />
             </div>
+             <div>
+              <label className="block text-xs font-bold uppercase text-white-500 mb-1">Contact Number</label>
+              <input type="tel" placeholder="123-456-7890" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brandNavy text-sm" />
+            </div>
             <div>
               <label className="block text-xs font-bold uppercase text-white-500 mb-1">Message</label>
               <textarea rows="4" placeholder="How can we assist you?" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brandNavy text-sm"></textarea>
             </div>
-            <button type="submit" className="w-full bg-white text-white font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors text-sm">
+            <button type="submit" className="w-full bg-blue text-brandNavy font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors text-sm">
               <Send className="w-4 h-4" />
               <span>Send Message</span>
             </button>
