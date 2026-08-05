@@ -58,10 +58,26 @@ const verifyAdmin = (req, res, next) => {
   });
 };
 
-/* ================= PUBLIC API ENDPOINTS ================= */
+/* ================= SYSTEM & ROOT ROUTES ================= */
 
-// Healthcheck Route for Render
+// Base Root Route (Fixes "Cannot GET /")
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: '🚀 Aashiana Foundation API is live and running!',
+    status: 'Active',
+    endpoints: {
+      stats: '/api/stats',
+      volunteers: '/api/volunteers (POST)',
+      donations: '/api/donations (POST)',
+      adminLogin: '/api/admin/login (POST)'
+    }
+  });
+});
+
+// Healthcheck Route for Render monitoring
 app.get('/health', (req, res) => res.status(200).send('OK'));
+
+/* ================= PUBLIC API ENDPOINTS ================= */
 
 // Get Platform Metrics
 app.get('/api/stats', async (req, res) => {
