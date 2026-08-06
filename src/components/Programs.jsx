@@ -162,10 +162,10 @@ export default function OurPrograms() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-brandRed font-bold text-xs uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100 inline-block mb-3">
+          <span className="text-red-700 font-bold text-xs uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200 inline-block mb-3">
             Our Initiatives
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-brandNavy tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight">
             Comprehensive Programs Restoring Dignity & Hope
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3">
@@ -194,10 +194,10 @@ export default function OurPrograms() {
                   <div className="lg:col-span-7 space-y-4 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-4 mb-3">
-                        <div className="p-3.5 bg-red-50 text-brandRed rounded-2xl shrink-0 group-hover:scale-105 transition-transform duration-300">
+                        <div className="p-3.5 bg-red-100 text-red-700 rounded-2xl shrink-0 group-hover:scale-105 transition-transform duration-300">
                           <IconComponent className="w-7 h-7" />
                         </div>
-                        <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-brandNavy">
+                        <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">
                           {prog.title}
                         </h3>
                       </div>
@@ -213,14 +213,14 @@ export default function OurPrograms() {
                       {/* Bullet Points */}
                       {prog.bullets && (
                         <div className="pt-2">
-                          <h4 className="text-xs font-bold uppercase tracking-wider text-brandNavy mb-3">
+                          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">
                             Key Focus Pillars:
                           </h4>
                           <ul className="space-y-2.5 text-sm text-slate-700">
                             {prog.bullets.map((bullet, idx) => (
                               <li key={idx} className="flex items-start gap-2.5">
-                                <CheckCircle2 className="w-4 h-4 text-brandRed shrink-0 mt-0.5" />
-                                <span className="font-medium text-slate-700">{bullet}</span>
+                                <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                                <span className="font-medium text-slate-800">{bullet}</span>
                               </li>
                             ))}
                           </ul>
@@ -233,7 +233,7 @@ export default function OurPrograms() {
                           <blockquote className="text-xs sm:text-sm italic text-slate-800 mb-2 font-medium">
                             “{prog.quote.text}”
                           </blockquote>
-                          <div className="text-xs font-bold text-brandNavy">
+                          <div className="text-xs font-bold text-slate-900">
                             — {prog.quote.author}
                           </div>
                         </div>
@@ -245,13 +245,13 @@ export default function OurPrograms() {
                   <div className="lg:col-span-5 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 flex flex-col justify-between h-full">
                     {prog.highlights && (
                       <div>
-                        <h4 className="text-xs font-bold uppercase tracking-wider text-brandNavy mb-4">
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">
                           Program Highlights
                         </h4>
                         <ul className="space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
                           {prog.highlights.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-2.5">
-                              <span className="w-2 h-2 bg-brandRed rounded-full shrink-0 mt-1.5" />
+                              <span className="w-2 h-2 bg-red-600 rounded-full shrink-0 mt-1.5" />
                               <span className="font-medium text-slate-700">{item}</span>
                             </li>
                           ))}
@@ -259,6 +259,7 @@ export default function OurPrograms() {
                       </div>
                     )}
 
+                    {/* High Contrast CTA Button */}
                     {prog.ctaText && (
                       <div className="pt-4 border-t border-slate-200 mt-auto">
                         <a

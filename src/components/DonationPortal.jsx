@@ -119,7 +119,7 @@ export default function DonationPortal() {
             <span>Proceed to Donate ₹{customAmount || amount || 0}</span>
           </button>
         </form>
-
+            
       </div>
     </section>
   );

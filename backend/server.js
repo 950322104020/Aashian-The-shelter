@@ -156,8 +156,5 @@ app.get('/api/admin/metrics', verifyAdmin, async (req, res) => {
   }
 });
 
-// Example API base URL setup
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-
-// Example fetch/axios call
-fetch(`${API_BASE_URL}/api/stats`)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, '0.0.0.0', () => console.log(`🚀 MERN Server running on port ${PORT}`));
