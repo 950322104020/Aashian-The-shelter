@@ -20,18 +20,18 @@ export default function Header() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 font-medium text-sm text-slateDark">
-          <a href="#top" className="hover:text-brandRed transition-colors">Home</a>
-          <a href="#about" className="hover:text-brandRed transition-colors">About Us</a>
-          <a href="#programs" className="hover:text-brandRed transition-colors">Programs</a>
-          <a href="#gallery" className="hover:text-brandRed transition-colors">Gallery</a>
-          <a href="#contact" className="hover:text-brandRed transition-colors">Contact</a>
+          <a href="#top" className="px-3 py-2 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200">Home</a>
+          <a href="#about" className="px-3 py-2 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200">About Us</a>
+          <a href="#programs" className="px-3 py-2 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200">Programs</a>
+          <a href="#gallery" className="px-3 py-2 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200">Gallery</a>
+          <a href="#contact" className="px-3 py-2 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200">Contact</a>
         </nav>
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
           <a 
             href="#donate"
-            className="bg-brandRed hover:bg-red-700 text-brandnavy font-semibold px-6 py-2.5 rounded-full shadow-sm text-sm transition-all"
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-sm text-sm transition-all duration-200"
           >
             Donate Now
           </a>
@@ -66,35 +66,35 @@ export default function Header() {
             <a 
               href="#top" 
               onClick={() => setIsOpen(false)} 
-              className="hover:text-brandRed transition-colors py-1 border-b border-gray-50"
+              className="py-1 px-4 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200"
             >
               Home
             </a>
             <a 
               href="#about" 
               onClick={() => setIsOpen(false)} 
-              className="hover:text-brandRed transition-colors py-1 border-b border-gray-50"
+              className="py-1 px-4 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200"
             >
               About Us
             </a>
             <a 
               href="#programs" 
               onClick={() => setIsOpen(false)} 
-              className="hover:text-brandRed transition-colors py-1 border-b border-gray-50"
+              className="py-1 px-4 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200"
             >
               Programs
             </a>
             <a 
               href="#gallery" 
               onClick={() => setIsOpen(false)} 
-              className="hover:text-brandRed transition-colors py-1 border-b border-gray-50"
+              className="py-1 px-4 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200"
             >
               Gallery
             </a>
             <a 
               href="#contact" 
               onClick={() => setIsOpen(false)} 
-              className="hover:text-brandRed transition-colors py-1 border-b border-gray-50"
+              className="py-1 px-4 rounded-lg text-slate-700 hover:text-white hover:bg-green-600 transition-all duration-200"
             >
               Contact
             </a>
@@ -103,7 +103,7 @@ export default function Header() {
             <a 
               href="#donate"
               onClick={() => setIsOpen(false)}
-              className="block text-center bg-brandRed hover:bg-red-700 text-brandnavy font-semibold px-6 py-2.5 rounded-full shadow-sm text-sm transition-all"
+              className="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-sm text-sm transition-all duration-200"
             >
               Donate Now
             </a>

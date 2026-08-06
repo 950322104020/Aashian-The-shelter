@@ -21,11 +21,11 @@ export default function Footer() {
         <div>
           <h4 className="font-heading font-bold text-brandGold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-white-300">
-            <li><a href="#top" className="hover:text-white">Home</a></li>
-            <li><a href="#about" className="hover:text-white">About Us</a></li>
-            <li><a href="#Gallery" className="hover:text-white">Gallery</a></li>
-            <li><a href="#programs" className="hover:text-white">Our Programs</a></li>
-            <li><a href="#donate" className="hover:text-white">Donate</a></li>
+            <li><a href="#top" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Home</a></li>
+            <li><a href="#about" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">About Us</a></li>
+            <li><a href="#gallery" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Gallery</a></li>
+            <li><a href="#programs" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Our Programs</a></li>
+            <li><a href="#donate" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Donate</a></li>
           </ul>
         </div>
 

@@ -114,8 +114,8 @@ export default function DonationPortal() {
             />
           </div>
 
-          <button type="submit" className="w-full bg-brandRed hover:bg-red-800 text-slate font-bold py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all">
-            <Heart className="w-5 h-5 fill-current" />
+          <button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all duration-200">
+            <Heart className="w-5 h-5 text-white" />
             <span>Proceed to Donate ₹{customAmount || amount || 0}</span>
           </button>
         </form>

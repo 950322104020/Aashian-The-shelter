@@ -263,10 +263,10 @@ export default function OurPrograms() {
                       <div className="pt-4 border-t border-slate-200 mt-auto">
                         <a
                           href={prog.ctaLink}
-                          className="group/btn w-full bg-white hover:bg-brandRed text-brandNavy hover:text-white font-bold py-3.5 px-6 rounded-xl text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-slate-200 hover:border-brandRed"
+                          className="group/btn w-full bg-white hover:bg-slate-100 text-slate-900 hover:text-slate-900 font-bold py-3.5 px-6 rounded-xl text-xs sm:text-sm transition-all duration-300 shadow-sm hover:shadow-lg flex items-center justify-center gap-2 border border-slate-300 hover:border-slate-900"
                         >
-                          <Heart className="w-4 h-4 fill-current text-brandNavy group-hover/btn:text-white shrink-0 transition-colors" />
-                          <span className="text-brandNavy group-hover/btn:text-white font-bold transition-colors">{prog.ctaText}</span>
+                          <Heart className="w-4 h-4 text-slate-900 group-hover/btn:text-slate-900 shrink-0 transition-colors" />
+                          <span className="font-bold tracking-wide">{prog.ctaText}</span>
                         </a>
                       </div>
                     )}
