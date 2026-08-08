@@ -1,0 +1,11 @@
+# Node and build artifacts
+node_modules/
+**/node_modules/
+.env
+.DS_Store
+dist/
+build/
+.vscode/
+npm-debug.log*
+package-lock.json
+yarn.lock
