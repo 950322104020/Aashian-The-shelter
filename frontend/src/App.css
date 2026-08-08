@@ -1,0 +1,15 @@
+.app {
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 1.2em;
+  color: #888;
+}
