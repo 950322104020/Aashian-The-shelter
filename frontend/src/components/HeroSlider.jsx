@@ -6,7 +6,7 @@ import { Heart, ArrowRight } from 'lucide-react';
 export default function HeroSlider() {
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop", // Nutrition / Community distribution image
+      image: "https://i.postimg.cc/BbywbX6G/family.jpg", // Nutrition / Community distribution image
       badge: "HIV Support Trust • Since 2011",
       title: "Building Dignity, One Family at a Time",
       desc: "Since 2011, Aashiana – The Shelter Trust has stood beside families living with HIV, offering nutrition, healthcare, education, and tools for independence.",
@@ -14,7 +14,7 @@ export default function HeroSlider() {
       ctaLink: "#donate",
     },
     {
-      image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1600&auto=format&fit=crop", // Children education classroom image
+      image: "https://i.postimg.cc/8zg6GNHd/children.jpg", // Children education classroom image
       badge: "Child Education NGO",
       title: "Empowering 54+ Children in School",
       desc: "Funding monthly tuition fees, school uniforms, and stationery kits to ensure children affected by HIV continue their education with dignity.",
@@ -22,7 +22,7 @@ export default function HeroSlider() {
       ctaLink: "#programs",
     },
     {
-      image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1600&auto=format&fit=crop", // Women craft / skill training image
+      image: "https://i.postimg.cc/c4Sx4HpG/women-empowerment.jpg", // Women craft / skill training image
       badge: "Women Empowerment",
       title: "Skill Training & Independent Livelihoods",
       desc: "Empowering women through jewellery-making, tailoring, financial literacy, and self-help savings groups.",
@@ -49,11 +49,11 @@ export default function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center brightness-[0.92] contrast-[1.05] saturate-[1.05]"
               />
 
-              {/* Dark Gradient Overlay for Maximum Text Contrast */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/95 via-[#1E3A5F]/80 to-[#1E3A5F]/60" />
+              {/* Soft overlay to keep text readable without overpowering the image */}
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-950/25 via-slate-900/10 to-slate-950/20" />
 
               {/* Slide Content */}
               <div className="max-w-4xl mx-auto text-center py-16 z-10 relative">
