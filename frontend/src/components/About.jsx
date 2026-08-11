@@ -28,12 +28,12 @@ export default function AboutUs() {
   const founderImgUrl = "https://i.postimg.cc/YqMkYStz/founder-(1).jpg";
 
   const impactStats = [
-    { icon: Calendar, value: '2011–Present', label: 'Years of Service', desc: 'Standing beside families' },
-    { icon: Users, value: '75', label: 'Families Supported Monthly', desc: 'Living with HIV' },
-    { icon: GraduationCap, value: '54', label: 'Children Supported', desc: 'School fees funded' },
-    { icon: BookOpen, value: '150', label: 'Stationery Kits', desc: 'Supplies provided for school' },
-    { icon: Sparkles, value: '16', label: 'Women Empowered', desc: 'Earning through skill programs' },
-    { icon: HeartHandshake, value: '600+', label: 'People Reached', desc: 'Quarterly outreach visits' },
+    { icon: Calendar, value: '15 Years ', label: 'of Service', desc: 'Standing beside families' },
+    { icon: Users, value: '75 Families', label: 'Supported Monthly', desc: 'With nutrition and ongoing assistance' },
+    { icon: GraduationCap, value: '54 Children', label: 'Receiving Education Support', desc: 'Monthly tuition fees funded' },
+    { icon: BookOpen, value: '150 Children', label: 'Receiving Stationery Support', desc: 'Supplies provided for school, twice a year' },
+    { icon: Sparkles, value: '16 Women', label: 'Receiving a Monthly Salary', desc: 'Through our livelihood programme' },
+    { icon: HeartHandshake, value: '600+ Families', label: 'Supported Annually', desc: "Across Aashiana's programmes and initiatives" },
   ];
 
   const valuesList = [
