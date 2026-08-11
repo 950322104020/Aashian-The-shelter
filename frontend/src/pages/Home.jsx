@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSlider from '../components/HeroSlider';
 import About from '../components/About';
+import StatsCounter from '../components/StatsCounter';
 import Programs from '../components/Programs';
 import DonationPortal from '../components/DonationPortal';
 import Contact from '../components/Contact';
@@ -14,6 +15,7 @@ export default function Home() {
       <Header />
       <HeroSlider />
       <About />
+      <StatsCounter />
       <Programs />
       <DonationPortal />
       <MediaGallery />

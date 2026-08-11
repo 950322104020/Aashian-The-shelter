@@ -5,8 +5,8 @@ export default function StatsCount() {
   const stats = [
     {
       icon: Calendar,
-      value: '15',
-      label: 'Years of Service',
+      value: '15 Years',
+      label: ' of Service',
       desc: 'Standing beside families since 2011',
     },
     {
@@ -17,19 +17,19 @@ export default function StatsCount() {
     },
     {
       icon: GraduationCap,
-      value: '54',
+      value: '54 Children',
       label: 'Receiving Education Support',
       desc: 'Monthly tuition fees funded',
     },
     {
       icon: BookOpen,
-      value: '150',
+      value: '150 Students',
       label: 'Receiving Stationery Support',
       desc: 'Supplies provided for school, twice a year',
     },
     {
       icon: Sparkles,
-      value: '16',
+      value: '16 Women',
       label: 'Receiving a Monthly Salary',
       desc: 'Through our livelihood programme',
     },
