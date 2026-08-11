@@ -46,7 +46,7 @@ export default function HeroSlider() {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
 
-            <div className="relative h-[520px] lg:h-[600px] overflow-hidden">
+            <div className="relative h-[750px] sm:h-[700px] lg:h-[850px] overflow-hidden">
 
               {/* Background Image */}
               <img
