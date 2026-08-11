@@ -5,39 +5,39 @@ export default function StatsCount() {
   const stats = [
     {
       icon: Calendar,
-      value: '2011-Present',
+      value: '15',
       label: 'Years of Service',
-      desc: 'Standing beside families',
+      desc: 'Standing beside families since 2011',
     },
     {
       icon: Users,
-      value: '75',
-      label: 'Families Supported Monthly',
-      desc: 'Living with HIV',
+      value: '75 Families',
+      label: 'Supported Monthly',
+      desc: 'With nutrition and ongoing assistance',
     },
     {
       icon: GraduationCap,
       value: '54',
-      label: 'Children in School',
-      desc: 'School fees funded',
+      label: 'Receiving Education Support',
+      desc: 'Monthly tuition fees funded',
     },
     {
       icon: BookOpen,
       value: '150',
-      label: 'Stationery Kits Provided',
-      desc: 'Notebooks, pens & supplies',
+      label: 'Receiving Stationery Support',
+      desc: 'Supplies provided for school, twice a year',
     },
     {
       icon: Sparkles,
       value: '16',
-      label: 'Women Empowered',
-      desc: 'Earning through skill-building',
+      label: 'Receiving a Monthly Salary',
+      desc: 'Through our livelihood programme',
     },
     {
       icon: HeartHandshake,
-      value: '600+',
-      label: 'People Reached',
-      desc: 'Quarterly outreach visits',
+      value: '600+ Families',
+      label: 'Supported Annually',
+      desc: "Across Aashiana's programmes and initiatives",
     },
   ];
 

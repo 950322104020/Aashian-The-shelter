@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import VolunteerModal from './VolunteerModal';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVolunteerModalOpen, setIsVolunteerModalOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', href: '#top' },
     { name: 'About Us', href: '#about' },
     { name: 'Programs', href: '#programs' },
     { name: 'Gallery', href: '#gallery' },
+    { name: 'Volunteers', href: '#volunteer' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -31,14 +34,28 @@ export default function Header() {
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-2 font-medium text-sm text-slateDark">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="relative px-3.5 py-2 rounded-lg text-slate-700 hover:text-green-700 hover:bg-green-50 transition-all duration-200 group font-semibold"
-            >
-              <span>{link.name}</span>
-              <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-full" />
-            </a>
+            link.name === 'Volunteers' ? (
+              <button
+                key={link.name}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsVolunteerModalOpen(true);
+                }}
+                className="relative px-3.5 py-2 rounded-lg text-slate-700 hover:text-green-700 hover:bg-green-50 transition-all duration-200 group font-semibold"
+              >
+                <span>{link.name}</span>
+                <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-full" />
+              </button>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                className="relative px-3.5 py-2 rounded-lg text-slate-700 hover:text-green-700 hover:bg-green-50 transition-all duration-200 group font-semibold"
+              >
+                <span>{link.name}</span>
+                <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-full" />
+              </a>
+            )
           ))}
         </nav>
 
@@ -76,17 +93,34 @@ export default function Header() {
         <div className="md:hidden bg-white border-t border-gray-100 px-6 pt-4 pb-6 space-y-4 shadow-xl animate-fadeIn">
           <nav className="flex flex-col gap-1.5 font-medium text-sm text-slateDark">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="px-4 py-2.5 rounded-xl text-slate-700 hover:text-green-700 hover:bg-green-50 active:bg-green-100 font-semibold transition-all duration-200 flex items-center justify-between group"
-              >
-                <span>{link.name}</span>
-                <span className="text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-green-600">
-                  →
-                </span>
-              </a>
+              link.name === 'Volunteers' ? (
+                <button
+                  key={link.name}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsVolunteerModalOpen(true);
+                    setIsOpen(false);
+                  }}
+                  className="px-4 py-2.5 rounded-xl text-slate-700 hover:text-green-700 hover:bg-green-50 active:bg-green-100 font-semibold transition-all duration-200 flex items-center justify-between group"
+                >
+                  <span>{link.name}</span>
+                  <span className="text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-green-600">
+                    →
+                  </span>
+                </button>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="px-4 py-2.5 rounded-xl text-slate-700 hover:text-green-700 hover:bg-green-50 active:bg-green-100 font-semibold transition-all duration-200 flex items-center justify-between group"
+                >
+                  <span>{link.name}</span>
+                  <span className="text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-green-600">
+                    →
+                  </span>
+                </a>
+              )
             ))}
           </nav>
 
@@ -101,6 +135,11 @@ export default function Header() {
           </div>
         </div>
       )}
+      {/* Volunteer Registration Modal (top-level) */}
+      <VolunteerModal
+        isOpen={isVolunteerModalOpen}
+        onClose={() => setIsVolunteerModalOpen(false)}
+      />
     </header>
   );
 }

@@ -21,14 +21,13 @@ export default function OurPrograms() {
       icon: Apple,
       title: "Nutrition Support",
       image: "https://i.postimg.cc/qRNz3xHP/Nutrition-(1).jpg",
-      keywords: "FOOD DONATION NGO INDIA • RATION DISTRIBUTION NGO • FOOD SECURITY TRUST",
-      summary: "Every second Saturday of the month, Aashiana provides essential food supplies to 70–75 families in need.",
-      desc: "This initiative goes beyond ration distribution—it's a demonstration of care, empathy, and community support. To keep meals varied and nutritious, we rotate staple items such as sugar, oil, rice, flour, and lentils, and provide immunity-boosting supplements where needed. Families can also share their specific needs, allowing us to provide wholesome extras like soya chunks and other nutritious food items.",
+      summary: "Every second Saturday of the month, Aashiana provides essential food supplies to 75–80 families in need.",
+      desc: "From monthly nutrition and medical assistance to education, livelihoods and communityoutreach, our programmes respond to the real and changing needs of the families we support.",
       highlights: [
         "Ration distribution every second Saturday",
-        "Supports 70–75 families in need monthly",
-        "Rotates staples & immunity-boosting supplements",
-        "Customized dietary support (e.g., soya chunks)"
+        "75-80 families supported every month",
+        "Essential food staples and nutritional support",
+        "Additional assistance based on individual family needs"
       ],
       ctaText: "Sponsor a Family's Nutrition",
       ctaLink: "#donate"
@@ -36,15 +35,15 @@ export default function OurPrograms() {
     {
       id: "medical",
       icon: Stethoscope,
-      title: "Medical Support for Families Living with HIV",
+      title: "Medical Support for Families ",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
-      keywords: "HIV SUPPORT NGO INDIA • MEDICAL REIMBURSEMENT TRUST • HEALTHCARE NGO",
-      summary: "Covering critical healthcare expenses and helping ensure regular medical check-ups for families living with HIV.",
-      desc: "Aashiana supports families and women living with HIV who frequently face health challenges. Families share their medical bills with us, and we reimburse these costs to ease their financial burden. By improving access to medical care, we work to support their health, dignity, and overall quality of life.",
+      summary: "Helping families access essential healthcare without carrying the financial burden alone.",
+      desc: "While ART treatment is available free of cost through government programmes, families often face additional expenses for medicines, diagnostic tests, consultations and othermedical needs. Aashiana helps reimburse these costs and provides assistance whenadditional healthcare is required.",
       highlights: [
-        "Direct medical expense reimbursement",
-        "Assistance for routine check-ups & medications",
-        "Dignity-first healthcare access"
+        "Medical expense reimbursement",
+        "Support for medicines and diagnostic tests",
+        "Assistance with consultations and check-ups",
+        "Additional medical support in critical cases"
       ],
       ctaText: "Support Healthcare",
       ctaLink: "#donate"
@@ -54,18 +53,17 @@ export default function OurPrograms() {
       icon: GraduationCap,
       title: "Educational Support for Children",
       image: "https://i.postimg.cc/8kqtsyVj/education.jpg",
-      keywords: "CHILD EDUCATION NGO • SCHOOL FEES SPONSORSHIP • EDUCATION TRUST",
-      summary: "Equipping children with the educational resources they need to pursue their dreams with dignity.",
-      desc: "Education is a core pillar of Aashiana's work. Despite limited resources, we actively support children's schooling to prevent dropouts and build long-term independence.",
-      bullets: [
+      summary: "Helping children stay in school and giving them the resources they need to continue their education.",
+      desc: "Education is one of Aashiana's core priorities. We currently fund monthly tuition fees for 54 children and provide stationery support to 150 children twice a year. School uniforms andadditional educational assistance are also provided to families facing financial hardship.",
+bullets: [
         "Fund monthly tuition fees for 54 children",
         "Provide school stationery (notebooks, registers, pencils, pens, colours, erasers) to 150 children",
         "Fund school uniforms for children facing the greatest financial hardship"
       ],
       highlights: [
         "Monthly tuition funding for 54 children",
-        "Stationery kits distributed to 150 children",
-        "School uniforms provided to families in hardship"
+        "Stationery support for 150 children twice a year",
+        "Additional educational assistance based on need"
       ],
       ctaText: "Support a Child's Education",
       ctaLink: "#donate"
@@ -73,18 +71,19 @@ export default function OurPrograms() {
     {
       id: "cancer-awareness",
       icon: Activity,
-      title: "Cancer Awareness Workshop",
+      title: "Cancer Awareness & Health Education Workshop",
       image: "https://i.postimg.cc/q7R52zDV/cancer-awareness.jpg",
-      keywords: "CANCER AWARENESS NGO • WOMEN'S HEALTH WORKSHOP • BREAST CANCER SCREENING",
-      summary: "Community health education covering cancer screenings, early detection, and personal hygiene.",
-      desc: "Aashiana hosted a cancer awareness workshop with specialists Jiji and Bun from Shalom Hospital (HIV & Cancer specialty). The session covered mouth, breast, and uterine cancers, including how to check for breast lumps, and encouraged the use of sanitary napkins over cloth during periods to reduce health risks.",
+      summary: "Creating awareness through practical health education and guidance from experienced healthcare professionals.",
+      desc: "Aashiana organises health awareness workshops to help women and families better understand cancer prevention, early detection, personal hygiene and the importance of seeking timely medical care. Our cancer awareness initiatives have included sessions conducted with guidance from Shalom Hospital, a group of retired doctors and the women of Team Nisarga . These workshops create a safe and accessible space for women to ask questions, address misconceptions and gain the knowledge and confidence to make more informed decisions about their health.",
       highlights: [
-        "Specialist guidance from Shalom Hospital",
-        "Covered mouth, breast, and uterine cancer screening",
-        "Encouraged sanitary hygiene awareness",
-        "16 women attended the workshop"
+        "Sessions with guidance with Ladies from Shalom Hospital",
+        "Awareness initiatives with Team Nisarga",
+        "Cancer prevention and early-detection awareness",
+        "Guidance on breast self-examination",
+        "Women's health and personal hygiene education",
+        "Health sessions with a group of retired doctors"
       ],
-      ctaText: "Support Health Workshops",
+      ctaText: "Support Health Awareness",
       ctaLink: "#donate"
     },
     {
@@ -92,9 +91,8 @@ export default function OurPrograms() {
       icon: Sparkles,
       title: "Women's Empowerment & Livelihood",
       image: "https://i.postimg.cc/prNzV6nR/woman.jpg",
-      keywords: "WOMEN EMPOWERMENT NGO INDIA • SKILL TRAINING • JEWELLERY MAKING LIVELIHOOD",
-      summary: "Skill training in handicrafts and financial literacy helping women earn an independent living.",
-      desc: "Began in 2012 with a jewellery-making workshop and has since grown to include tailoring and handicrafts with employment linkages. Today, 16 women earn a stable income through this program. New jewellery designs are introduced quarterly and sold across online/offline platforms.",
+      summary: "Building skills, confidence and financial independence.",
+      desc: "Began in 2012 with a jewellery-making workshop and has since grown to include tailoring and handicrafts with employment linkages. Today, 16 women earn a stable income through this program. New jewellery designs are introduced quarterly and sold across online/offline platforms.Alongside livelihood opportunities, we support women with practical skills including financial literacy, banking, communication and confidence-building.",
       quote: {
         text: "I never imagined I could earn my own money because of my condition and no degree. Now, I make jewellery and people buy it. It makes me feel proud.",
         author: "Kamlekha (name changed), Jewellery Artisan"
@@ -121,13 +119,12 @@ export default function OurPrograms() {
       icon: Users,
       title: "Community Outreach in Underserved Areas",
       image: "https://i.postimg.cc/52vc6HrG/cm-outreach.jpg",
-      keywords: "COMMUNITY OUTREACH NGO • FOOD AND CLOTHING DRIVE • WINTER RELIEF INDIA",
-      summary: "Quarterly distribution drives bringing food, warmth, and relief to underserved communities.",
-      desc: "Every quarter, our team visits underserved communities to distribute food, clothing, blankets, and snacks to children. This year, 600+ individuals benefited from these visits, bringing warmth and relief to those who need it most.",
+      summary: "Extending support beyond the families directly enrolled with Aashiana.",
+      desc: "Through community outreach drives, Aashiana distributes food, clothing, blankets and other essentials to underserved communities. These initiatives allow us to reach families and individuals facing hardship beyond our regular programmes.",
       highlights: [
-        "Quarterly distribution of food, clothing, and blankets",
-        "Winter relief drives for children & families",
-        "600+ individuals benefited this year"
+        "Food, clothing and essential supplies to children and families",
+        "Seasonal and winter relief",
+        "Outreach to underserved communities"
       ],
       ctaText: "Support Community Drives",
       ctaLink: "#donate"
@@ -137,15 +134,14 @@ export default function OurPrograms() {
       icon: Building2,
       title: "Hospital Visits & Emotional Support",
       image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
-      keywords: "HOSPITAL OUTREACH NGO • THALASSEMIA PATIENT SUPPORT • HIV PATIENT CARE",
-      summary: "Bringing fresh fruit, companionship, and emotional comfort to hospital patients.",
-      desc: "Every quarter, we visit hospitals to bring fresh fruit and emotional support to individuals living with Thalassemia and HIV. Many of these patients lack nearby family support, and our visits offer comfort, companionship, and a sense of belonging.",
+      summary: "Sometimes support is as simple and as important as showing up.",
+      desc: "Every quarter, Aashiana visits hospital patients with HIV and Thalassemia, providing fresh fruit, practical assistance and companionship. For patients who may have little or no family support nearby, these visits are also about offering comfort, conversation and reminding them that they are not alone.",
       highlights: [
-        "Quarterly visits to patients with Thalassemia & HIV",
-        "Fresh fruit distribution & emotional companionship",
-        "Creating a sense of belonging for isolated individuals"
+        "Quarterly hospital visits to patients with HIV and Thalassemia",
+        "Fresh fruit and practical assistance",
+        "Companionship and emotional support"
       ],
-      ctaText: "Sponsor Patient Meals",
+      ctaText: "Sponsor Patient Care",
       ctaLink: "#donate"
     },
     {
@@ -153,7 +149,6 @@ export default function OurPrograms() {
       icon: Home,
       title: "Home Visits & Family Welfare",
       image: "https://i.postimg.cc/8PcNPzDX/Outreach.jpg ",
-      keywords: "FAMILY WELFARE VISITS NGO • HOME-BASED FAMILY SUPPORT • HEALTH & HYGIENE",
       summary: "Quarterly field visits fostering care, trust, and tailored guidance for families in need.",
       desc: "Our field staff conducts quarterly home visits to families in need. These visits help us understand each family's challenges, provide financial support where necessary, and share guidance on health and hygiene. Building trust and fostering care remain at the heart of every visit.",
       highlights: [
@@ -179,7 +174,7 @@ export default function OurPrograms() {
             Comprehensive Programs Restoring Dignity & Hope
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-3">
-            Holistic support spanning nutrition, medical reimbursement, child education, livelihood training, and community outreach.
+            From monthly nutrition and medical assistance to education, livelihoods and community outreach, our programmes respond to the real and changing needs of the families we support.
           </p>
         </div>
 

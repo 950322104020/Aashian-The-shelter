@@ -13,13 +13,16 @@ import {
   Eye,
   CheckCircle2,
   Compass,
-  X
+  X,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState('story');
   const [imgError, setImgError] = useState(false);
   const [isImageOpen, setIsImageOpen] = useState(false);
+  const [showFullStory, setShowFullStory] = useState(false);
 
   // Founder avatar image URL
   const founderImgUrl = "https://i.postimg.cc/YqMkYStz/founder-(1).jpg";
@@ -136,14 +139,44 @@ export default function AboutUs() {
                     In 2010, <strong className="text-white font-semibold">Vinita Bahadur</strong>, a schoolteacher of 20 years then working with an HIV/AIDS awareness organisation across India, met a young widow who had been abandoned by her in-laws and left alone with a newborn after losing her husband to an AIDS-related illness. Vinita gave her shelter, care, and stood by her until she rebuilt her life.
                   </p>
                   <p>
-                    That one encounter revealed the depth of stigma, isolation, and poverty faced by families living with HIV, especially women and children—and it became the seed of Aashiana.
+                    That encounter revealed the stigma, isolation and financial hardship faced by families affected by HIV, particularly women and children and became the beginning of Aashiana.
                   </p>
-                  <p>
-                    In 2011, <strong className="text-white font-semibold">Aashiana – The Shelter Trust</strong> was registered as a non-profit, starting with just 20 families living with HIV. The challenges were immense: malnutrition, no access to steady medical care, no steady income, and children dropping out of school. With no institutional funding in those early years, Vinita turned to friends and well-wishers, raising support through handmade calendars, cooking foods, and small community sales.
-                  </p>
-                  <p>
-                    From those beginnings, Aashiana's mission has stayed the same: to restore dignity, health, and hope to families affected by HIV. In 2012, we introduced a jewellery-making workshop—our first skill-building program for women—which continues to help women earn independently today.
-                  </p>
+
+                  {/* Toggle Button */}
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => setShowFullStory((prev) => !prev)}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brandRed text-white text-sm font-semibold hover:bg-brandRed/90 transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brandRed/50 cursor-pointer"
+                    >
+                      <span>{showFullStory ? 'Show less' : 'Read our full story'}</span>
+                      {showFullStory ? (
+                        <ChevronUp className="w-4 h-4" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
+
+                  {/* Expandable Story Section */}
+                  <AnimatePresence>
+                    {showFullStory && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="overflow-hidden space-y-5 pt-2"
+                      >
+                        <p>
+                          In 2011, <strong className="text-white font-semibold">Aashiana – The Shelter Trust</strong> was registered as a non-profit, starting with just 20 families living with HIV. The challenges were immense: malnutrition, no access to steady medical care, no steady income, and children dropping out of school. With no institutional funding in those early years, Vinita turned to friends and well-wishers, raising support through handmade calendars, cooking foods, and small community sales.
+                        </p>
+                        <p>
+                          From those beginnings, Aashiana's mission has stayed the same: to restore dignity, health, and hope to families affected by HIV. In 2012, we introduced a jewellery-making workshop—our first skill-building program for women—which continues to help women earn independently today.
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
               )}
 
@@ -312,10 +345,10 @@ export default function AboutUs() {
               Our Impact
             </span>
             <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
-              A Decade of Measured Change
+              15 Years of Measured Change
             </h3>
             <p className="text-white/70 text-sm mt-2">
-              Almost a decade on, Aashiana supports 75 families living with HIV every month. Children are back in school, women earn independent livelihoods, and families receive consistent nutrition and healthcare.
+              For 15 years, Aashiana has stood beside families infected &amp; affected by HIV, providingconsistent nutrition, healthcare, education, livelihood opportunities and emotional support.What began with 20 families has grown into a community that now supports more than 600 families annually.
             </p>
           </motion.div>
 

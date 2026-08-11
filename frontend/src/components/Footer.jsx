@@ -24,22 +24,25 @@ export default function Footer() {
             <li><a href="#about" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">About Us</a></li>
             <li><a href="#gallery" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Gallery</a></li>
             <li><a href="#programs" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Our Programs</a></li>
+            <li><a href="#contact" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Contact Us</a></li>
+            <li><a href="#volunteer" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Volunteers</a></li>
             <li><a href="#donate" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Donate</a></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-heading font-bold text-brandGold mb-4">Support & Helpline</h4>
-          <p className="text-sm text-white-300">Toll-Free 24/7 Helpline:</p>
-          <p className="text-lg font-bold text-white mt-1">+1800-123-456</p>
+          <p className="text-sm text-white-300">Contact:</p>
+          <p className="text-lg font-bold text-white mt-1">+91 9811566561 </p>
+           <p className="text-sm text-white-300">Email Support : aashiana.theshelter@gmail.com</p>
           <p className="text-xs text-white mt-2">100% Confidential Support</p>
         </div>
 
         <div>
           <h4 className="font-heading font-bold text-brandGold mb-4">Location</h4>
           <p className="text-sm text-white-300">
-            AASHIANA Foundation Headquarters,<br />
-            New Delhi, India
+           Headquarters,<br />
+          RZ-61, First Floor. Palam Vihar. Sector-6. Dwarka. New Delhi- 110075
           </p>
         </div>
       </div>
