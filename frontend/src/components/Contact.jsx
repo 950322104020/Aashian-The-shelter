@@ -45,8 +45,8 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs text-white font-bold uppercase">Helpline</h4>
-                  <p className="font-semibold text-white">+1800-123-456</p>
+                  <h4 className="text-xs text-white font-bold uppercase">Contact</h4>
+                  <p className="font-semibold text-white">+91 9811566561 </p>
                 </div>
               </div>
 
@@ -56,7 +56,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs text-white font-bold uppercase">Email Support</h4>
-                  <p className="font-semibold text-white">support@aasahivfoundation.org</p>
+                  <p className="font-semibold text-white">aashiana.theshelter@gmail.com</p>
                 </div>
               </div>
 
@@ -66,7 +66,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs text-white font-bold uppercase">Headquarters</h4>
-                  <p className="font-semibold text-white">AASHIANA Foundation Center, Main Road, India</p>
+                  <p className="font-semibold text-white">RZ-61, First Floor. Palam Vihar. Sector-6. Dwarka. New Delhi- 110075</p>
                 </div>
               </div>
             </div>

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Heart, 
-  ShieldCheck, 
-  Sparkles, 
-  Calendar, 
-  Users, 
-  GraduationCap, 
-  BookOpen, 
+import {
+  Heart,
+  ShieldCheck,
+  Sparkles,
+  Calendar,
+  Users,
+  GraduationCap,
+  BookOpen,
   HeartHandshake,
   Target,
   Eye,
@@ -25,7 +25,7 @@ export default function AboutUs() {
   const [showFullStory, setShowFullStory] = useState(false);
 
   // Founder avatar image URL
-  const founderImgUrl = "https://i.postimg.cc/YqMkYStz/founder-(1).jpg";
+  const founderImgUrl = "https://i.postimg.cc/g2V8kKmC/founder-fixed-4x3.jpg";
 
   const impactStats = [
     { icon: Calendar, value: '15 Years ', label: 'of Service', desc: 'Standing beside families' },
@@ -62,9 +62,9 @@ export default function AboutUs() {
   return (
     <section id="about" className="py-20 bg-brandNavy text-white font-body relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
+
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -83,7 +83,7 @@ export default function AboutUs() {
         </motion.div>
 
         {/* Tab Buttons */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -101,9 +101,8 @@ export default function AboutUs() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 z-10 ${
-                    activeTab === tab.id ? 'text-white' : 'text-white/70 hover:text-white'
-                  }`}
+                  className={`relative flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 z-10 ${activeTab === tab.id ? 'text-white' : 'text-white/70 hover:text-white'
+                    }`}
                 >
                   {activeTab === tab.id && (
                     <motion.div
@@ -122,7 +121,7 @@ export default function AboutUs() {
 
         {/* Dynamic Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mb-20">
-          
+
           {/* Left Column: Tab Content */}
           <div className="lg:col-span-7 space-y-6 text-white/80 leading-relaxed text-base flex flex-col justify-center min-h-[360px]">
             <AnimatePresence mode="wait">
@@ -225,8 +224,8 @@ export default function AboutUs() {
                   className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                 >
                   {valuesList.map((val, idx) => (
-                    <motion.div 
-                      key={idx} 
+                    <motion.div
+                      key={idx}
                       whileHover={{ scale: 1.02 }}
                       className="bg-white/5 border border-white/10 p-5 rounded-2xl flex items-start gap-3 hover:bg-white/10 transition-all"
                     >
@@ -243,7 +242,7 @@ export default function AboutUs() {
           </div>
 
           {/* Right Column: Founder Quote Card & Highlights */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -251,7 +250,7 @@ export default function AboutUs() {
             className="lg:col-span-5 flex flex-col justify-start space-y-4"
           >
             {/* Founder Message Card */}
-            <motion.div 
+            <motion.div
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
               className="w-full max-w-[30rem] ml-auto mr-0 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-slate-100 transition-all hover:shadow-2xl"
@@ -334,7 +333,7 @@ export default function AboutUs() {
 
         {/* Our Impact Section */}
         <div className="pt-12 border-t border-white/10">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -353,7 +352,7 @@ export default function AboutUs() {
           </motion.div>
 
           {/* Staggered Glassmorphic Impact Cards */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
