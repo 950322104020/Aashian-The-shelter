@@ -1,16 +1,71 @@
 const mongoose = require('mongoose');
 
-const DonationSchema = new mongoose.Schema({
-  donorName: { type: String },
-  email: { type: String },
-  amount: { type: Number, required: true },
-  currency: { type: String, default: 'INR' },
-  status: { type: String, enum: ['pending', 'completed', 'failed'], default: 'completed' },
-  transactionId: { type: String, unique: true, sparse: true },
-  note: { type: String },
-  createdAt: { type: Date, default: Date.now }
-});
+const donationSchema = new mongoose.Schema(
+  {
+    donorName: {
+      type: String,
+      required: true,
+      trim: true
+    },
 
-DonationSchema.index({ transactionId: 1 }, { unique: true, partialFilterExpression: { transactionId: { $type: 'string' } } });
+    email: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true
+    },
 
-module.exports = mongoose.model('Donation', DonationSchema);
+    phone: {
+      type: String,
+      trim: true,
+      default: ''
+    },
+
+    amount: {
+      type: Number,
+      required: true,
+      min: 1
+    },
+
+    type: {
+      type: String,
+      enum: ['one-time', 'monthly'],
+      default: 'one-time'
+    },
+
+    paymentMethod: {
+      type: String,
+      default: 'UPI'
+    },
+
+    upiId: {
+      type: String,
+      default: 'shyamzacx@axl'
+    },
+
+    utr: {
+      type: String,
+      required: true,
+      trim: true
+    },
+
+    status: {
+      type: String,
+      enum: ['Pending', 'Verified', 'Rejected'],
+      default: 'Pending'
+    },
+
+    adminNote: {
+      type: String,
+      trim: true,
+      default: ''
+    }
+  },
+  {
+    timestamps: true
+  }
+);
+
+module.exports =
+  mongoose.models.Donation ||
+  mongoose.model('Donation', donationSchema);
