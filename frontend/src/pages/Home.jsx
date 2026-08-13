@@ -6,6 +6,8 @@ import Programs from '../components/Programs';
 import DonationPortal from '../components/DonationPortal';
 import Contact from '../components/Contact';
 import MediaGallery from '../components/MediaGallery';
+import MapSection from '../components/MapSection';
+import WhatsAppButton from '../components/WhatsAppButton';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -18,6 +20,8 @@ export default function Home() {
       <DonationPortal />
       <MediaGallery />
       <Contact />
+      <MapSection />
+      <WhatsAppButton />
       <Footer />
     </div>
   );
