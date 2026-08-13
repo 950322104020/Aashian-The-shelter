@@ -57,7 +57,7 @@ export default function HeroSlider() {
                   inset-0
                   w-full
                   h-full
-                  object-cover
+                  object-content
                   object-center
                   brightness-[0.98]
                   contrast-[1.02]
