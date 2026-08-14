@@ -99,9 +99,8 @@ export default function DonationPortal() {
     try {
 
       await axios.post(
-        `${
-          import.meta.env.VITE_API_URL ||
-          'http://localhost:5000'
+        `${import.meta.env.VITE_API_URL ||
+        'http://localhost:5000'
         }/api/donations`,
         {
           transactionId: `TXN_${Date.now()}`,
@@ -215,11 +214,10 @@ export default function DonationPortal() {
                 onClick={() =>
                   setType('one-time')
                 }
-                className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${
-                  type === 'one-time'
+                className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${type === 'one-time'
                     ? 'bg-brandRed text-slate shadow'
                     : 'text-gray-600'
-                }`}
+                  }`}
               >
                 One-Time
               </button>
@@ -229,11 +227,10 @@ export default function DonationPortal() {
                 onClick={() =>
                   setType('monthly')
                 }
-                className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${
-                  type === 'monthly'
+                className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${type === 'monthly'
                     ? 'bg-brandRed text-slate shadow'
                     : 'text-gray-600'
-                }`}
+                  }`}
               >
                 Monthly Supporter
               </button>
@@ -257,12 +254,11 @@ export default function DonationPortal() {
                     setAmount(val);
                     setCustomAmount('');
                   }}
-                  className={`py-2.5 rounded-xl text-sm font-bold border transition-all ${
-                    amount === val &&
-                    !customAmount
+                  className={`py-2.5 rounded-xl text-sm font-bold border transition-all ${amount === val &&
+                      !customAmount
                       ? 'border-brandRed bg-red-50 text-brandRed'
                       : 'border-gray-200 text-gray-700 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   ₹{val}
                 </button>
