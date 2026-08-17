@@ -5,10 +5,19 @@ import VolunteerModal from './VolunteerModal';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVolunteerModalOpen, setIsVolunteerModalOpen] = useState(false);
+  const [isAboutMobileOpen, setIsAboutMobileOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
+    {
+      name: 'About Us',
+      path: '/about',
+      hasDropdown: true,
+      subLinks: [
+        { name: 'Overview', path: '/about' },
+        { name: 'Our Story', path: '/about/story' }
+      ]
+    },
     { name: 'Programs', path: '/programs' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
@@ -49,24 +58,68 @@ export default function Header() {
         {/* ================= DESKTOP NAVIGATION ================= */}
         <nav className="hidden md:flex items-center gap-2 font-medium text-sm text-slateDark">
 
-          {navLinks.map((link) => (
+          {navLinks.map((link) => {
+            if (link.hasDropdown) {
+              return (
+                <div key={link.name} className="relative group">
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `relative px-3.5 py-2 rounded-lg transition-all duration-200 flex items-center gap-1 font-semibold ${isActive
+                        ? 'text-green-700 bg-green-50'
+                        : 'text-slate-700 hover:text-green-700 hover:bg-green-50'
+                      }`
+                    }
+                  >
+                    <span>{link.name}</span>
+                    <svg
+                      className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </NavLink>
 
-            <NavLink
-              key={link.name}
-              to={link.path}
-              className={({ isActive }) =>
-                `relative px-3.5 py-2 rounded-lg transition-all duration-200 group font-semibold ${isActive
-                  ? 'text-green-700 bg-green-50'
-                  : 'text-slate-700 hover:text-green-700 hover:bg-green-50'
-                }`
-              }
-            >
-              <span>{link.name}</span>
+                  {/* Dropdown Card */}
+                  <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-slate-100 rounded-xl shadow-xl py-1.5 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                    {link.subLinks.map((sub) => (
+                      <NavLink
+                        key={sub.name}
+                        to={sub.path}
+                        className={({ isActive }) =>
+                          `block px-4 py-2 text-sm font-semibold transition-colors duration-150 ${
+                            isActive
+                              ? 'text-green-700 bg-green-50'
+                              : 'text-slate-700 hover:text-green-700 hover:bg-green-50'
+                          }`
+                        }
+                      >
+                        {sub.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
 
-              <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-full" />
-            </NavLink>
-
-          ))}
+            return (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={({ isActive }) =>
+                  `relative px-3.5 py-2 rounded-lg transition-all duration-200 group font-semibold ${isActive
+                    ? 'text-green-700 bg-green-50'
+                    : 'text-slate-700 hover:text-green-700 hover:bg-green-50'
+                  }`
+                }
+              >
+                <span>{link.name}</span>
+                <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-full" />
+              </NavLink>
+            );
+          })}
 
 
           {/* Volunteers - Modal */}
@@ -151,28 +204,72 @@ export default function Header() {
 
           <nav className="flex flex-col gap-1.5 font-medium text-sm text-slateDark">
 
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              if (link.hasDropdown) {
+                return (
+                  <div key={link.name} className="flex flex-col">
+                    <button
+                      type="button"
+                      onClick={() => setIsAboutMobileOpen(!isAboutMobileOpen)}
+                      className="px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:text-green-700 hover:bg-green-50 active:bg-green-100 transition-all duration-200 flex items-center justify-between group"
+                    >
+                      <span>{link.name}</span>
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-200 ${isAboutMobileOpen ? 'rotate-180 text-green-600' : 'text-slate-400'}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    
+                    {/* Collapsible Sub-menu */}
+                    {isAboutMobileOpen && (
+                      <div className="pl-6 pr-4 py-1.5 flex flex-col gap-1 bg-slate-50/50 rounded-xl mt-1 ml-2 border-l border-slate-100">
+                        {link.subLinks.map((sub) => (
+                          <NavLink
+                            key={sub.name}
+                            to={sub.path}
+                            onClick={closeMobileMenu}
+                            className={({ isActive }) =>
+                              `px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-between ${
+                                isActive
+                                  ? 'text-green-700 bg-green-50'
+                                  : 'text-slate-600 hover:text-green-700 hover:bg-green-50'
+                              }`
+                            }
+                          >
+                            <span>{sub.name}</span>
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
 
-              <NavLink
-                key={link.name}
-                to={link.path}
-                onClick={closeMobileMenu}
-                className={({ isActive }) =>
-                  `px-4 py-2.5 rounded-xl font-semibold transition-all duration-200 flex items-center justify-between group ${isActive
-                    ? 'text-green-700 bg-green-50'
-                    : 'text-slate-700 hover:text-green-700 hover:bg-green-50 active:bg-green-100'
-                  }`
-                }
-              >
-                <span>{link.name}</span>
+              return (
+                <NavLink
+                  key={link.name}
+                  to={link.path}
+                  onClick={closeMobileMenu}
+                  className={({ isActive }) =>
+                    `px-4 py-2.5 rounded-xl font-semibold transition-all duration-200 flex items-center justify-between group ${isActive
+                      ? 'text-green-700 bg-green-50'
+                      : 'text-slate-700 hover:text-green-700 hover:bg-green-50 active:bg-green-100'
+                    }`
+                  }
+                >
+                  <span>{link.name}</span>
 
-                <span className="text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-green-600">
-                  →
-                </span>
+                  <span className="text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-green-600">
+                    →
+                  </span>
 
-              </NavLink>
-
-            ))}
+                </NavLink>
+              );
+            })}
 
 
             {/* Mobile Volunteers */}

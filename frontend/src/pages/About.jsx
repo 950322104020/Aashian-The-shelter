@@ -13,16 +13,13 @@ import {
     Eye,
     CheckCircle2,
     Compass,
-    X,
-    ChevronDown,
-    ChevronUp
+    X
 } from 'lucide-react';
 
 export default function About() {
     const [activeTab, setActiveTab] = useState('story');
     const [imgError, setImgError] = useState(false);
     const [isImageOpen, setIsImageOpen] = useState(false);
-    const [showFullStory, setShowFullStory] = useState(false);
 
     // Founder image
     const founderImgUrl =
@@ -135,11 +132,6 @@ export default function About() {
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
                         Restoring Dignity, Health & Hope Since 2011
                     </h1>
-
-                    <p className="text-white/60 text-xs sm:text-sm mt-3">
-                        Keywords: Aashiana Shelter Trust Story • HIV Support NGO History
-                        India • Founder Vinita Bahadur • NGO for Families Living with HIV
-                    </p>
                 </motion.div>
 
                 {/* ================= TABS ================= */}
@@ -177,8 +169,8 @@ export default function About() {
                                     type="button"
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`relative flex-1 min-w-[120px] py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 z-10 ${activeTab === tab.id
-                                            ? 'text-white'
-                                            : 'text-white/70 hover:text-white'
+                                        ? 'text-white'
+                                        : 'text-white/70 hover:text-white'
                                         }`}
                                 >
                                     {activeTab === tab.id && (
@@ -204,10 +196,10 @@ export default function About() {
                 </motion.div>
 
                 {/* ================= MAIN CONTENT ================= */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
 
                     {/* LEFT SIDE */}
-                    <div className="lg:col-span-7 space-y-6 text-white/80 leading-relaxed text-base flex flex-col justify-center min-h-[360px]">
+                    <div className="lg:col-span-7 space-y-6 text-white/80 leading-relaxed text-base flex flex-col justify-start">
 
                         <AnimatePresence mode="wait">
 
@@ -250,78 +242,6 @@ export default function About() {
                                         hardship faced by families affected by HIV, particularly
                                         women and children and became the beginning of Aashiana.
                                     </p>
-
-                                    {/* Read More */}
-                                    <div>
-                                        <button
-                                            type="button"
-                                            onClick={() =>
-                                                setShowFullStory((prev) => !prev)
-                                            }
-                                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brandRed text-white text-sm font-semibold hover:bg-brandRed/90 transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brandRed/50 cursor-pointer"
-                                        >
-                                            <span>
-                                                {showFullStory
-                                                    ? 'Show less'
-                                                    : 'Read our full story'}
-                                            </span>
-
-                                            {showFullStory ? (
-                                                <ChevronUp className="w-4 h-4" />
-                                            ) : (
-                                                <ChevronDown className="w-4 h-4" />
-                                            )}
-                                        </button>
-                                    </div>
-
-                                    {/* Full Story */}
-                                    <AnimatePresence>
-                                        {showFullStory && (
-                                            <motion.div
-                                                initial={{
-                                                    opacity: 0,
-                                                    height: 0
-                                                }}
-                                                animate={{
-                                                    opacity: 1,
-                                                    height: 'auto'
-                                                }}
-                                                exit={{
-                                                    opacity: 0,
-                                                    height: 0
-                                                }}
-                                                transition={{
-                                                    duration: 0.4,
-                                                    ease: 'easeInOut'
-                                                }}
-                                                className="overflow-hidden space-y-5 pt-2"
-                                            >
-                                                <p>
-                                                    In 2011,{' '}
-                                                    <strong className="text-white font-semibold">
-                                                        Aashiana – The Shelter Trust
-                                                    </strong>{' '}
-                                                    was registered as a non-profit, starting with just
-                                                    20 families living with HIV. The challenges were
-                                                    immense: malnutrition, no access to steady medical
-                                                    care, no steady income, and children dropping out of
-                                                    school. With no institutional funding in those early
-                                                    years, Vinita turned to friends and well-wishers,
-                                                    raising support through handmade calendars, cooking
-                                                    foods, and small community sales.
-                                                </p>
-
-                                                <p>
-                                                    From those beginnings, Aashiana's mission has stayed
-                                                    the same: to restore dignity, health, and hope to
-                                                    families affected by HIV. In 2012, we introduced a
-                                                    jewellery-making workshop—our first skill-building
-                                                    program for women—which continues to help women earn
-                                                    independently today.
-                                                </p>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
                                 </motion.div>
                             )}
 
@@ -452,7 +372,7 @@ export default function About() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={fadeInUp}
-                        className="lg:col-span-5 flex flex-col justify-start space-y-4"
+                        className="lg:col-span-5 flex flex-col justify-start items-center lg:items-end space-y-4 w-full"
                     >
 
                         {/* Founder Card */}
@@ -463,7 +383,7 @@ export default function About() {
                             transition={{
                                 duration: 0.3
                             }}
-                            className="w-full max-w-[30rem] ml-auto mr-0 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-slate-100 transition-all hover:shadow-2xl"
+                            className="w-full max-w-[28rem] ml-auto mr-0 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-slate-100 transition-all hover:shadow-2xl"
                         >
 
                             <button
@@ -472,7 +392,7 @@ export default function About() {
                                 className="block w-full text-left cursor-zoom-in group"
                                 aria-label="View full founder photo"
                             >
-                                <div className="w-full h-72 sm:h-80 md:h-[20rem] overflow-hidden relative bg-slate-100">
+                                <div className="w-full h-72 sm:h-80 md:h-[15rem] overflow-hidden relative bg-slate-100">
 
                                     {!imgError ? (
                                         <img
@@ -538,7 +458,7 @@ export default function About() {
                         </motion.div>
 
                         {/* Pillars */}
-                        <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-sm grid grid-cols-2 gap-4 max-w-[30rem] ml-auto">
+                        <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-sm grid grid-cols-3 gap-4 max-w-[30rem] ml-auto">
 
                             <div className="flex items-center gap-3">
 
