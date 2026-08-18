@@ -8,7 +8,7 @@ require('dotenv').config();
 const volunteerRoutes = require('./routes/volunteer');
 const donationRoutes = require('./routes/donation');
 
-const { transporter } = require('./utils/mailer');
+const { sendEmail } = require('./utils/email');
 
 const app = express();
 
@@ -97,13 +97,19 @@ app.use(
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    console.log('🍃 MongoDB Connected Successfully');
+
+    console.log(
+      '🍃 MongoDB Connected Successfully'
+    );
+
   })
   .catch((error) => {
+
     console.error(
       '❌ MongoDB Connection Error:',
       error
     );
+
   });
 
 /*
@@ -131,15 +137,17 @@ app.post('/api/contact', async (req, res) => {
     */
 
     if (!name || !email || !message) {
+
       return res.status(400).json({
         success: false,
         error: 'Name, email and message are required.'
       });
+
     }
 
     /*
     |--------------------------------------------------------------------------
-    | Send Email
+    | Email Recipient
     |--------------------------------------------------------------------------
     */
 
@@ -148,6 +156,7 @@ app.post('/api/contact', async (req, res) => {
       process.env.EMAIL_USER;
 
     if (!recipientEmail) {
+
       console.error(
         '❌ CLIENT_RECEIVER_EMAIL and EMAIL_USER are both missing.'
       );
@@ -156,12 +165,16 @@ app.post('/api/contact', async (req, res) => {
         success: false,
         error: 'Email recipient is not configured.'
       });
+
     }
 
-    await transporter.sendMail({
+    /*
+    |--------------------------------------------------------------------------
+    | Send Contact Email
+    |--------------------------------------------------------------------------
+    */
 
-      from:
-        `"AASHIANA Website" <${process.env.EMAIL_USER}>`,
+    await sendEmail({
 
       to: recipientEmail,
 
@@ -192,7 +205,9 @@ app.post('/api/contact', async (req, res) => {
             border: 1px solid #ddd;
           ">
 
-            <h2 style="color: #16a34a;">
+            <h2 style="
+              color: #16a34a;
+            ">
               📩 New Contact Message
             </h2>
 
@@ -218,14 +233,18 @@ app.post('/api/contact', async (req, res) => {
               ${subject || 'No Subject'}
             </p>
 
-            <h3>Message</h3>
+            <h3>
+              Message
+            </h3>
 
             <div style="
               background: #f3f4f6;
               padding: 15px;
               border-radius: 8px;
             ">
+
               ${message}
+
             </div>
 
             <p style="
@@ -233,7 +252,10 @@ app.post('/api/contact', async (req, res) => {
               color: #777;
               font-size: 13px;
             ">
-              This message was sent from the AASHIANA website.
+
+              This message was sent from
+              the AASHIANA website.
+
             </p>
 
           </div>
@@ -241,19 +263,46 @@ app.post('/api/contact', async (req, res) => {
         </body>
 
         </html>
-      `
+      `,
+
+      text: `
+Name: ${name}
+Email: ${email}
+Phone: ${phone || 'N/A'}
+Subject: ${subject || 'No Subject'}
+
+Message:
+${message}
+`
+
     });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Success
+    |--------------------------------------------------------------------------
+    */
 
     console.log(
       `📧 Contact email sent successfully to ${recipientEmail}`
     );
 
     return res.status(200).json({
+
       success: true,
-      message: 'Message sent successfully!'
+
+      message:
+        'Message sent successfully!'
+
     });
 
   } catch (error) {
+
+    /*
+    |--------------------------------------------------------------------------
+    | Email Error
+    |--------------------------------------------------------------------------
+    */
 
     console.error(
       '❌ Contact email error:',
@@ -261,10 +310,16 @@ app.post('/api/contact', async (req, res) => {
     );
 
     return res.status(500).json({
+
       success: false,
-      error: 'Failed to send contact email.'
+
+      error:
+        'Failed to send contact email.'
+
     });
+
   }
+
 });
 
 /*
@@ -292,11 +347,17 @@ app.use(
 app.get('/api/stats', (req, res) => {
 
   res.json({
+
     yearsActive: '20+',
+
     livesImpacted: '10,000+',
+
     healthCamps: '150+',
+
     volunteersCount: 500,
+
     totalDonations: 1200
+
   });
 
 });
@@ -342,8 +403,12 @@ app.get('/', (req, res) => {
 app.get('/health', (req, res) => {
 
   res.status(200).json({
+
     success: true,
-    message: 'Backend is healthy'
+
+    message:
+      'Backend is healthy'
+
   });
 
 });
