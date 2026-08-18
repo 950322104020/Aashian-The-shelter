@@ -35,8 +35,14 @@ const donationSchema = new mongoose.Schema(
 
     paymentMethod: {
       type: String,
-      default: 'UPI'
+      default: 'Razorpay'
     },
+
+    /*
+    |--------------------------------------------------------------------------
+    | Manual UPI / Bank Transfer
+    |--------------------------------------------------------------------------
+    */
 
     upiId: {
       type: String,
@@ -45,13 +51,48 @@ const donationSchema = new mongoose.Schema(
 
     utr: {
       type: String,
-      required: true,
-      trim: true
+      trim: true,
+      default: ''
     },
+
+    /*
+    |--------------------------------------------------------------------------
+    | Razorpay
+    |--------------------------------------------------------------------------
+    */
+
+    razorpayOrderId: {
+      type: String,
+      trim: true,
+      default: ''
+    },
+
+    razorpayPaymentId: {
+      type: String,
+      trim: true,
+      default: ''
+    },
+
+    razorpaySignature: {
+      type: String,
+      trim: true,
+      default: ''
+    },
+
+    /*
+    |--------------------------------------------------------------------------
+    | Donation Status
+    |--------------------------------------------------------------------------
+    */
 
     status: {
       type: String,
-      enum: ['Pending', 'Verified', 'Rejected'],
+      enum: [
+        'Pending',
+        'Verified',
+        'Rejected',
+        'Failed'
+      ],
       default: 'Pending'
     },
 
