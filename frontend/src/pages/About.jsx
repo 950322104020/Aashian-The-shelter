@@ -20,6 +20,31 @@ export default function About() {
     const [activeTab, setActiveTab] = useState('story');
     const [imgError, setImgError] = useState(false);
     const [isImageOpen, setIsImageOpen] = useState(false);
+    const [showFullStory, setShowFullStory] = useState(false);
+
+    const timelineEvents = [
+        {
+            year: '2011',
+            title: 'Aashiana – The Shelter Trust is Registered',
+            icon: Calendar,
+            iconBg: 'bg-blue-500/20 text-blue-400',
+            description: 'In 2011, Aashiana – The Shelter Trust was registered as a non-profit, starting with just 20 families living with HIV. The challenges were immense: malnutrition, no access to steady medical care, no steady income, and children dropping out of school. With no institutional funding in those early years, Vinita turned to friends and well-wishers, raising support through handmade calendars, cooking foods, and small community sales.'
+        },
+        {
+            year: '2012',
+            title: 'First Skill-Building Program Launch',
+            icon: Sparkles,
+            iconBg: 'bg-amber-500/20 text-amber-400',
+            description: "From those beginnings, Aashiana's mission has stayed the same: to restore dignity, health, and hope to families affected by HIV. In 2012, we introduced a jewellery-making workshop—our first skill-building program for women—which continues to help women earn independently today."
+        },
+        {
+            year: 'Present Day',
+            title: 'A Growing Community of Hope',
+            icon: Users,
+            iconBg: 'bg-emerald-500/20 text-emerald-400',
+            description: 'From our small beginnings of 20 families, Aashiana has grown to support over 600 families annually through healthcare, nutrition, educational funding, and livelihood training, consistently fighting stigma and restoring dignity.'
+        }
+    ];
 
     // Founder image
     const founderImgUrl =
@@ -229,7 +254,7 @@ export default function About() {
                                         <strong className="text-white font-semibold">
                                             Vinita Bahadur
                                         </strong>
-                                        , a schoolteacher of 20 years then working with an HIV/AIDS
+                                        , a school teacher of 20 years then working with an HIV/AIDS
                                         awareness organisation across India, met a young widow who
                                         had been abandoned by her in-laws and left alone with a
                                         newborn after losing her husband to an AIDS-related
@@ -242,6 +267,63 @@ export default function About() {
                                         hardship faced by families affected by HIV, particularly
                                         women and children and became the beginning of Aashiana.
                                     </p>
+
+                                    <div className="pt-2">
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowFullStory(!showFullStory)}
+                                            className="inline-flex items-center gap-2 bg-brandRed hover:bg-brandRed/90 active:scale-95 text-white font-semibold px-6 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all text-sm cursor-pointer focus:outline-none"
+                                        >
+                                            {showFullStory ? 'Show Less' : 'Read Our Full Story'}
+                                            <svg
+                                                className={`w-4 h-4 transition-transform duration-300 ${showFullStory ? 'rotate-180' : ''}`}
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                    {showFullStory && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.4 }}
+                                            className="relative border-l-2 border-white/10 ml-4 sm:ml-6 space-y-8 mt-6 pt-2"
+                                        >
+                                            {timelineEvents.map((event, index) => {
+                                                const Icon = event.icon;
+                                                return (
+                                                    <div
+                                                        key={index}
+                                                        className="relative pl-8 sm:pl-10"
+                                                    >
+                                                        {/* Timeline Indicator Dot with Icon */}
+                                                        <div className={`absolute -left-5 top-1.5 w-10 h-10 rounded-full flex items-center justify-center border-4 border-brandNavy bg-brandNavy shadow-lg ${event.iconBg}`}>
+                                                            <Icon className="w-4 h-4" />
+                                                        </div>
+
+                                                        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all duration-300">
+                                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                                                                <h3 className="text-lg font-bold text-white font-heading">
+                                                                    {event.title}
+                                                                </h3>
+                                                                <span className="text-xs font-extrabold bg-brandRed text-white px-2.5 py-0.5 rounded-full w-max">
+                                                                    {event.year}
+                                                                </span>
+                                                            </div>
+                                                            <p className="text-white/70 leading-relaxed text-sm">
+                                                                {event.description}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </motion.div>
+                                    )}
                                 </motion.div>
                             )}
 
@@ -458,7 +540,7 @@ export default function About() {
                         </motion.div>
 
                         {/* Pillars */}
-                        <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-sm grid grid-cols-3 gap-4 max-w-[30rem] ml-auto">
+                        <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-sm grid grid-cols-2 gap-4 max-w-[28rem] ml-auto">
 
                             <div className="flex items-center gap-3">
 

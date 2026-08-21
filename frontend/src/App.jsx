@@ -10,10 +10,10 @@ import WhatsAppButton from './components/WhatsAppButton';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
-import OurStory from './pages/OurStory';
 import Programs from './pages/Programs';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Memorial from './pages/Memorial';
 
 export default function App() {
   return (
@@ -30,7 +30,6 @@ export default function App() {
 
           {/* About */}
           <Route path="/about" element={<About />} />
-          <Route path="/about/story" element={<OurStory />} />
 
           {/* Programs */}
           <Route path="/programs" element={<Programs />} />
@@ -40,6 +39,9 @@ export default function App() {
 
           {/* Contact */}
           <Route path="/contact" element={<Contact />} />
+
+          {/* Memorial */}
+          <Route path="/memorial" element={<Memorial />} />
 
         </Routes>
       </main>

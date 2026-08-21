@@ -15,7 +15,7 @@ export default function HeroSlider() {
 
   const slides = [
     {
-      image: 'https://i.postimg.cc/BbywbX6G/family.jpg',
+      image: 'https://i.postimg.cc/QdLf7tXQ/gl3.jpg',
 
       title: 'Building Dignity, One Family at a Time',
 
@@ -28,7 +28,7 @@ export default function HeroSlider() {
     },
 
     {
-      image: 'https://i.postimg.cc/8zg6GNHd/children.jpg',
+      image: 'https://i.postimg.cc/15hczdRt/IMG-6013-fixed-4x3.jpg',
 
       title: 'Empowering Children Through Education',
 
@@ -41,7 +41,7 @@ export default function HeroSlider() {
     },
 
     {
-      image: 'https://i.postimg.cc/c4Sx4HpG/women-empowerment.jpg',
+      image: 'https://i.postimg.cc/cJbLLVS8/gold-fixed-4x3.jpg',
 
       title: 'Skills That Create Independent Lives',
 
@@ -91,20 +91,19 @@ export default function HeroSlider() {
 
             <div className="
               relative
-              h-[calc(100vh-90px)]
-              min-h-[600px]
-              max-h-[850px]
+              h-[30vh]
+              md:h-[40vh]
+              lg:h-[calc(60vh-80px)]
+              min-h-[280px]
+              md:min-h-[650px]
+              max-h-[700px]
               overflow-hidden
             ">
 
-              {/* BACKGROUND IMAGE */}
-
+              {/* BACKGROUND IMAGE FILLING FRAME */}
               <img
-
                 src={slide.image}
-
                 alt={slide.title}
-
                 className="
                   absolute
                   inset-0
@@ -116,7 +115,6 @@ export default function HeroSlider() {
                   contrast-[1.02]
                   saturate-[1.05]
                 "
-
               />
 
               {/* LIGHT OVERLAY */}
@@ -145,10 +143,11 @@ export default function HeroSlider() {
                 inset-x-0
                 bottom-0
                 z-10
-                px-5
+                px-4
                 sm:px-8
                 lg:px-16
-                pb-16
+                pb-6
+                sm:pb-16
                 lg:pb-20
               ">
 
@@ -157,15 +156,16 @@ export default function HeroSlider() {
                   {/* TITLE */}
 
                   <h1 className="
-                    text-3xl
+                    text-lg
                     sm:text-4xl
                     lg:text-5xl
                     font-extrabold
                     font-heading
                     text-white
                     tracking-tight
-                    leading-[1.05]
-                    mb-4
+                    leading-[1.1]
+                    mb-2
+                    sm:mb-4
                     max-w-xl
                   ">
 
@@ -177,12 +177,14 @@ export default function HeroSlider() {
 
                   <p className="
                     text-white/90
-                    text-sm
+                    text-[11px]
                     sm:text-base
                     lg:text-lg
                     max-w-lg
-                    leading-relaxed
-                    mb-6
+                    leading-normal
+                    sm:leading-relaxed
+                    mb-3
+                    sm:mb-6
                   ">
 
                     {slide.desc}
@@ -198,16 +200,19 @@ export default function HeroSlider() {
                       hover:bg-red-700
                       text-white
                       font-bold
-                      px-6
-                      py-3
+                      px-4
+                      py-2
+                      sm:px-6
+                      sm:py-3
                       rounded-full
                       shadow-lg
                       transition-all
-                      text-xs
+                      text-[10px]
                       sm:text-sm
                       inline-flex
                       items-center
-                      gap-2
+                      gap-1.5
+                      sm:gap-2
                     "
                   >
 

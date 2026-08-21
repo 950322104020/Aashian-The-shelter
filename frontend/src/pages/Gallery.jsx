@@ -3,48 +3,89 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const mediaItems = [
     {
-        title: "Tourism",
         image: "https://i.postimg.cc/C5YvPKhG/gl1-1-gallery.jpg"
     },
     {
-        title: "Food ",
         image: "https://i.postimg.cc/4497w1jZ/IMG-6016-gallery.jpg"
     },
     {
-        title: "Rashan Stock",
         image: "https://i.postimg.cc/63T679JH/IMG-0439-gallery.jpg"
     },
     {
-        title: "Community Counseling Session",
         image: "https://i.postimg.cc/43ghhHBL/000066090006-gallery.jpg"
     },
     {
-        title: "Skill Development support",
         image: "https://i.postimg.cc/VvjxvT6D/laptop1-gallery.jpg"
     },
     {
-        title: "Festival Celebration",
         image: "https://i.postimg.cc/htRs4vW8/glry1.jpg"
     },
     {
-        title: "Rashan Distribution",
         image: "https://i.postimg.cc/SRN6YYQB/IMG-6009-gallery.jpg"
     },
     {
-        title: "Happy Moments",
         image: "https://i.postimg.cc/HsLGdSmw/IMG-6017-gallery.jpg"
-    }
-];
+    },
+    {
+        image: "https://i.postimg.cc/8PcNPzDX/Outreach.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/sDtsyKfr/women-empowerment-4x3.pngg"
 
-// Duplicate items to ensure a seamless infinite marquee scroll
-const duplicatedItems = [...mediaItems, ...mediaItems];
+    },
+    {
+        image: "https://i.postimg.cc/rmgRBbnm/hospital2.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/FHVcwT3T/IMG-0439.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/Cx3HVRQS/IMG-6008.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/K8fftGqb/IMG-0004-(1).jpg"
+    },
+    {
+        image: "https://i.postimg.cc/t4nRxJCd/IMG-6041.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/T3VSFvkx/IMG-0473.jpg"
+
+    },
+    {
+        image: "https://i.postimg.cc/brRgLqyH/IMG-6035.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/Cx3HVRQS/IMG-6https://i.postimg.cc/sX2334xB/IMG-6022.jpg008.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/sxK4dyBB/IMG-6011.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/8zgzQWSG/IMG-6013-fixed-4x3.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/sX2334xB/IMG-6022.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/GmqcVfh0/IMG-6021.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/KcrC0M8Q/IMG-6035.jpg"
+    },
+    {
+        image: "https://i.postimg.cc/hGtLThtH/IMG-6040.jpg"
+    }
+
+
+]
 
 export default function MediaGallery() {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const [direction, setDirection] = useState(1);
 
     const openImage = (index) => {
-        setSelectedIndex(index % mediaItems.length);
+        setSelectedIndex(index);
     };
 
     const closeImage = () => {
@@ -128,26 +169,13 @@ export default function MediaGallery() {
             </div>
 
 
-            {/* ================= INFINITE CAROUSEL ================= */}
+            {/* ================= GALLERY GRID ================= */}
 
-            <div className="relative w-full overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4">
 
-                <motion.div
-                    className="flex gap-6 w-max cursor-pointer"
-                    animate={{
-                        x: ['0%', '-50%']
-                    }}
-                    transition={{
-                        ease: 'linear',
-                        duration: 20,
-                        repeat: Infinity
-                    }}
-                    whileHover={{
-                        animationPlayState: 'paused'
-                    }}
-                >
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-                    {duplicatedItems.map((item, idx) => (
+                    {mediaItems.map((item, idx) => (
 
                         <button
                             key={idx}
@@ -159,13 +187,14 @@ export default function MediaGallery() {
                 rounded-2xl
                 overflow-hidden
                 shadow-md
-                w-80
-                md:w-96
+                w-full
                 aspect-[4/3]
-                flex-shrink-0
                 text-left
                 focus:outline-none
                 bg-slate-900
+                hover:shadow-lg
+                transition-shadow
+                duration-300
               "
                         >
 
@@ -252,7 +281,7 @@ export default function MediaGallery() {
 
                     ))}
 
-                </motion.div>
+                </div>
 
             </div>
 

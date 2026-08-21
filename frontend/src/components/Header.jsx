@@ -1,36 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import VolunteerModal from './VolunteerModal';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVolunteerModalOpen, setIsVolunteerModalOpen] = useState(false);
   const [isAboutMobileOpen, setIsAboutMobileOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    {
-      name: 'About Us',
-      path: '/about',
-      hasDropdown: true,
-      subLinks: [
-        { name: 'Overview', path: '/about' },
-        { name: 'Our Story', path: '/about/story' }
-      ]
-    },
+    { name: 'About Us', path: '/about' },
     { name: 'Programs', path: '/programs' },
     { name: 'Gallery', path: '/gallery' },
+    { name: 'Memorial', path: '/memorial' },
     { name: 'Contact', path: '/contact' },
   ];
 
   // Close mobile menu
   const closeMobileMenu = () => {
-    setIsOpen(false);
-  };
-
-  // Open volunteer modal
-  const openVolunteerModal = () => {
-    setIsVolunteerModalOpen(true);
     setIsOpen(false);
   };
 
@@ -120,18 +105,6 @@ export default function Header() {
               </NavLink>
             );
           })}
-
-
-          {/* Volunteers - Modal */}
-          <button
-            type="button"
-            onClick={openVolunteerModal}
-            className="relative px-3.5 py-2 rounded-lg text-slate-700 hover:text-green-700 hover:bg-green-50 transition-all duration-200 group font-semibold"
-          >
-            <span>Volunteers</span>
-
-            <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left rounded-full" />
-          </button>
 
         </nav>
 
@@ -269,23 +242,7 @@ export default function Header() {
 
                 </NavLink>
               );
-            })}
-
-
-            {/* Mobile Volunteers */}
-            <button
-              type="button"
-              onClick={openVolunteerModal}
-              className="px-4 py-2.5 rounded-xl text-slate-700 hover:text-green-700 hover:bg-green-50 active:bg-green-100 font-semibold transition-all duration-200 flex items-center justify-between group"
-            >
-              <span>Volunteers</span>
-
-              <span className="text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-green-600">
-                →
-              </span>
-            </button>
-
-          </nav>
+            })}          </nav>
 
 
           {/* ================= MOBILE DONATE ================= */}
@@ -304,13 +261,6 @@ export default function Header() {
         </div>
 
       )}
-
-
-      {/* ================= VOLUNTEER MODAL ================= */}
-      <VolunteerModal
-        isOpen={isVolunteerModalOpen}
-        onClose={() => setIsVolunteerModalOpen(false)}
-      />
 
     </header>
   );

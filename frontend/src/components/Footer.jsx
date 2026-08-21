@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -20,12 +21,19 @@ export default function Footer() {
         <div>
           <h4 className="font-heading font-bold text-brandGold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-white-300">
-            <li><a href="#top" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Home</a></li>
-            <li><a href="#about" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">About Us</a></li>
-            <li><a href="#gallery" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Gallery</a></li>
-            <li><a href="#programs" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Our Programs</a></li>
-            <li><a href="#contact" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Contact Us</a></li>
-            <li><a href="#volunteer" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Volunteers</a></li>
+            <li><Link to="/" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Home</Link></li>
+            <li><Link to="/about" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">About Us</Link></li>
+            <li><Link to="/gallery" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Gallery</Link></li>
+            <li><Link to="/programs" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Our Programs</Link></li>
+            <li><Link to="/contact" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Contact Us</Link></li>
+            <li>
+              <Link
+                to="/memorial"
+                className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200"
+              >
+                Memorial
+              </Link>
+            </li>
             <li><a href="#donate" className="block px-3 py-2 rounded-lg text-white hover:text-white hover:bg-green-600 transition-all duration-200">Donate</a></li>
           </ul>
         </div>
